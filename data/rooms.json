@@ -1,0 +1,37 @@
+[
+    {
+      "roomId": 1,
+      "roomNumber": 41,
+      "floor": 1
+    },
+    {
+      "roomId": 2,
+      "roomNumber": 31,
+      "floor": 1
+    },
+    {
+      "roomId": 3,
+      "roomNumber": 1,
+      "floor": 2
+    },
+    {
+      "roomId": 4,
+      "roomNumber": 29,
+      "floor": 2
+    },
+    {
+      "roomId": 5,
+      "roomNumber": 11,
+      "floor": 1
+    },
+    {
+      "roomId": 6,
+      "roomNumber": 9,
+      "floor": 1
+    },
+    {
+      "roomId": 7,
+      "roomNumber": 45,
+      "floor": 2
+    }
+]

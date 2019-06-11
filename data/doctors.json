@@ -1,0 +1,65 @@
+[
+    {
+      "doctorId": 1,
+      "roomId": 7,
+      "firstName": "Вениамин",
+      "lastName": "Туров",
+      "patronymic": "Эмилевич",
+      "specialization": "эндокринолог",
+      "schedule": ""
+    },
+    {
+      "doctorId": 2,
+      "roomId": 6,
+      "firstName": "Владимир",
+      "lastName": "Иканов",
+      "patronymic": "Федосиевич",
+      "specialization": "окулист",
+      "schedule": ""
+    },
+    {
+      "doctorId": 3,
+      "roomId": 5,
+      "firstName": "Милена",
+      "lastName": "Фомичёва",
+      "patronymic": "Яновна",
+      "specialization": "психотерапевт",
+      "schedule": ""
+    },
+    {
+      "doctorId": 4,
+      "roomId": 4,
+      "firstName": "Самсон",
+      "lastName": "Крутов",
+      "patronymic": "Дмитриевич ",
+      "specialization": "терапевт",
+      "schedule": ""
+    },
+    {
+      "doctorId": 5,
+      "roomId": 3,
+      "firstName": "Василиса",
+      "lastName": "Сапалёва",
+      "patronymic": "Марковна",
+      "specialization": "терапевт",
+      "schedule": ""
+    },
+    {
+      "doctorId": 6,
+      "roomId": 2,
+      "firstName": "Ростислав",
+      "lastName": "Цыцын",
+      "patronymic": "Адамович",
+      "specialization": "стоматолог",
+      "schedule": ""
+    },
+    {
+      "doctorId": 7,
+      "roomId": 1,
+      "firstName": "Никон",
+      "lastName": "Беликов",
+      "patronymic": "Евгениевич",
+      "specialization": "хирург",
+      "schedule": ""
+    }
+]
