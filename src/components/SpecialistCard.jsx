@@ -42,27 +42,28 @@ export default class SpecialistCard extends React.Component {
                 <div className="card shadow" onClick={this.toggle}>
                     <div className="card-body">
                         <h5 className="card-title">{fullName}</h5>
-                        <h6 className="card-subtitle mb-2 text-muted">{specialization}</h6>
-                        <p className="card-text">Кабинет №{roomNumber}</p>
-                        <p className="card-text">Дни работы: {this.getShortSchedule(schedule)}</p>
+                        <h6 className="card-subtitle mb-3 text-muted">{specialization}</h6>
+                        <p className="card-text"><strong>кабинет:</strong> №{roomNumber}</p>
+                        <p className="card-text"><strong>Рабочие дни:</strong> {this.getShortSchedule(schedule)}</p>
                     </div>
                 </div>
                 <div className={classes} style={style}>
                     <div className="modal-dialog modal-dialog-centered" role="document">
                         <div className="modal-content">
                             <div className="modal-header">
-                                <div className="modal-title">{fullName}</div>
+                                <div className="modal-title"><strong>{fullName}</strong></div>
                                     <button type="button" className="close" data-dismiss="modal" aria-label="Close" onClick={this.toggle}>
                                         <span aria-hidden="true">&times;</span>
                                     </button>
                                 </div>
                             <div className="modal-body">
-                                <h6 className="text-muted">{specialization}</h6>
-                                <p>Кабинет №{roomNumber}</p>
-                                <p>Расписание:{}</p>
+                                <h6 className="mb-3 text-muted">{specialization}</h6>
+                                <Link to="/plan" className="text-reset">
+                                    <p><strong>кабинет:</strong> №{roomNumber}</p>
+                                </Link>
+                                <p><strong>Время работы:</strong></p>
                                 <ul>{this.getFullSchedule(schedule)}</ul>
                             </div>
-                            
                         </div>
                     </div>
                 </div>

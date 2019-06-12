@@ -35,18 +35,18 @@ export default class Card extends React.Component {
         };
 
         return (
-            <div>
+            <>
                 <div className="card border-light mb-3 shadow">
                     <h5 className="card-header">
-                        <div class="row">
-                            <div class="col-auto mr-auto">{stringDate}</div>
-                            <div class="col-auto">каб. {room.roomNumber}</div>
+                        <div className="row">
+                            <div className="col-auto mr-auto">{stringDate}</div>
+                            <div className="col-auto">каб. {room.roomNumber}</div>
                         </div>
                     </h5>
                     <div className="card-body">
                         <h5 className="card-title">{fullName}</h5>
                         <p className="card-text">{specialization}</p>
-                        <div class="row justify-content-end">
+                        <div className="row justify-content-end">
                             <button type="button" className="mx-1 btn btn-outline-success btn-sm">Маршрут</button>
                             <button type="button" className="mx-1 btn btn-outline-success btn-sm" onClick={this.toggle}>Отменить</button>
                         </div>
@@ -65,7 +65,7 @@ export default class Card extends React.Component {
                         </div>
                     </div>
                 </div>
-            </div>
+            </>
         );
     }
     

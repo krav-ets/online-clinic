@@ -28,7 +28,7 @@ export default class App extends React.Component {
         this.setState({ ...data });
     }
 
-    genAppointments = () => {
+    getAppointments = () => {
         const { appointments, doctors, rooms } = this.state;
         const apps = appointments.map((a) => {
             const room = find(rooms, { roomId: a.roomId });
@@ -41,7 +41,7 @@ export default class App extends React.Component {
         return apps;
     }
 
-    genSpecialists = () => {
+    getSpecialists = () => {
         const { doctors, rooms } = this.state;
         const apps = doctors.map((doc) => {
             const { roomNumber } = find(rooms, { roomId: doc.roomId });
@@ -56,10 +56,10 @@ export default class App extends React.Component {
                 <div className = "app" style={{ 'maxWidth': '480px','minWidth': '320px' }}>
                     <Header />
                     <Content>
-                        <Route exact path="/" render={() => <Main apps={this.genAppointments()} />} />
+                        <Route exact path="/" render={() => <Main apps={this.getAppointments()} />} />
                         <Route path="/profile" render={() => <Profile profile={this.state.profile} />} />
-                        <Route path="/myrecords" render={() => <Appointments apps={this.genAppointments()} />} />
-                        <Route path="/specialists" render={() => <Specialists specialists={this.genSpecialists()} />} />
+                        <Route path="/appointments" render={() => <Appointments apps={this.getAppointments()} />} />
+                        <Route path="/specialists" render={() => <Specialists specialists={this.getSpecialists()} />} />
                         <Route path="/plan" component={Plan}/>
                     </Content>
                 </div>
