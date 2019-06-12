@@ -50,7 +50,7 @@ export default class SpecialistCard extends React.Component {
                 <div className={classes} style={style}>
                     <div className="modal-dialog modal-dialog-centered" role="document">
                         <div className="modal-content">
-                            <div className="modal-header">
+                            <div className="modal-header bg-light">
                                 <div className="modal-title"><strong>{fullName}</strong></div>
                                     <button type="button" className="close" data-dismiss="modal" aria-label="Close" onClick={this.toggle}>
                                         <span aria-hidden="true">&times;</span>
