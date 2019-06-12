@@ -1,3 +1,5 @@
+const CopyPlugin = require('copy-webpack-plugin');
+
 module.exports = {
     mode: process.env.NODE_ENV || 'development',
     entry: [
@@ -7,8 +9,8 @@ module.exports = {
       extensions: ['.js', '.jsx'],
     },
     output: {
-      path: `${__dirname}/public`,
-      //publicPath: '/public',
+      path: `${__dirname}/dist/public`,
+      publicPath: '/public',
     },
     module: {
       rules: [
@@ -23,4 +25,9 @@ module.exports = {
         },
       ],
     },
+    plugins: [
+      new CopyPlugin([
+        { from: `${__dirname}/public`, to: `${__dirname}/dist/public` },
+      ]),
+    ],
   };
