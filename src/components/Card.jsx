@@ -37,7 +37,12 @@ export default class Card extends React.Component {
         return (
             <div>
                 <div className="card border-light mb-3 shadow">
-                    <h5 className="card-header">{stringDate}, каб. {room.roomNumber}</h5>
+                    <h5 className="card-header">
+                        <div class="row">
+                            <div class="col-auto mr-auto">{stringDate}</div>
+                            <div class="col-auto">каб. {room.roomNumber}</div>
+                        </div>
+                    </h5>
                     <div className="card-body">
                         <h5 className="card-title">{fullName}</h5>
                         <p className="card-text">{specialization}</p>

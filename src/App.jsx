@@ -53,7 +53,7 @@ export default class App extends React.Component {
     render() {
         return (
             <Router>
-                <div className = "app" style={{ 'max-width': '480px','min-width': '320px' }}>
+                <div className = "app" style={{ 'maxWidth': '480px','minWidth': '320px' }}>
                     <Header />
                     <Content>
                         <Route exact path="/" render={() => <Main apps={this.genAppointments()} />} />

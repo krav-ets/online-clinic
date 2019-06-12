@@ -30,11 +30,6 @@ module.exports = {
         {
           from: `${__dirname}/public`,
           to: `${__dirname}/dist/public`,
-          ignore: ['*.html'],
-        },
-        {
-          from: `${__dirname}/public/*.html`,
-          to: `${__dirname}/dist/`,
         },
       ]),
     ],

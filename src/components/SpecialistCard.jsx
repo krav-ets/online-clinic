@@ -11,8 +11,19 @@ export default class SpecialistCard extends React.Component {
         });
     }
 
+    getShortSchedule = (schedule) => {
+        return schedule
+            .map(day => day[0])
+            .join(', ');
+    }
+
+    getFullSchedule = (schedule) => {
+        return schedule
+            .map((day, index) => <li key={index}>{day[0]}: c {day[1].from} до {day[1].to}</li>);
+    }
+
     render() {
-        const { firstName, lastName, patronymic, specialization, schedule, roomNumber } = this.props.doctor;
+        const { firstName, lastName, patronymic, specialization, schedule, roomNumber } = this.props;
         const fullName = `${lastName} ${firstName} ${patronymic}`;
         const { isOpen } = this.state;
 
@@ -33,11 +44,11 @@ export default class SpecialistCard extends React.Component {
                         <h5 className="card-title">{fullName}</h5>
                         <h6 className="card-subtitle mb-2 text-muted">{specialization}</h6>
                         <p className="card-text">Кабинет №{roomNumber}</p>
-                        <p className="card-text">{schedule}</p>
+                        <p className="card-text">Дни работы: {this.getShortSchedule(schedule)}</p>
                     </div>
                 </div>
                 <div className={classes} style={style}>
-                    <div className="modal-dialog" role="document">
+                    <div className="modal-dialog modal-dialog-centered" role="document">
                         <div className="modal-content">
                             <div className="modal-header">
                                 <div className="modal-title">{fullName}</div>
@@ -48,7 +59,8 @@ export default class SpecialistCard extends React.Component {
                             <div className="modal-body">
                                 <h6 className="text-muted">{specialization}</h6>
                                 <p>Кабинет №{roomNumber}</p>
-                                <p>{schedule}</p>
+                                <p>Расписание:{}</p>
+                                <ul>{this.getFullSchedule(schedule)}</ul>
                             </div>
                             
                         </div>
