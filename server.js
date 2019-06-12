@@ -1,6 +1,9 @@
 import Express from 'express';
 import path from 'path';
-import data from './data';
+import appointments from '../data/appointments.json';
+import profile from '../data/profile.json';
+import doctors from '../data/doctors.json';
+import rooms from '../data/rooms.json';
 
 const app = new Express();
 
@@ -11,6 +14,7 @@ app.use(Express.static(path.join(__dirname, 'public'), {
 
 
 app.get('/api/v1', (req, res) => {
+  const data = { appointments, doctors, rooms, profile };
   res.json(data);
 });
 
