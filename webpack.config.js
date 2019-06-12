@@ -27,7 +27,15 @@ module.exports = {
     },
     plugins: [
       new CopyPlugin([
-        { from: `${__dirname}/public`, to: `${__dirname}/dist/public` },
+        {
+          from: `${__dirname}/public`,
+          to: `${__dirname}/dist/public`,
+          ignore: ['*.html'],
+        },
+        {
+          from: `${__dirname}/public/*.html`,
+          to: `${__dirname}/dist/`,
+        },
       ]),
     ],
   };

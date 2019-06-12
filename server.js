@@ -20,7 +20,7 @@ app.get('/api/v1', (req, res) => {
 
 app.get('*', (req, res, next) => {
   console.log('Request: [GET]', req.originalUrl)
-  res.sendFile(path.resolve(__dirname, 'public', 'index.html'));
+  res.sendFile(path.resolve(__dirname, 'public/', 'index.html'));
 });
 
 
