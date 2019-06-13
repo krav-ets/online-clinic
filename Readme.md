@@ -1,1 +1,1 @@
-### (https://o-clinic.herokuapp.com/)
+### https://o-clinic.herokuapp.com/

@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import axios from 'axios';
-import { find } from 'lodash';
+import { find, sortBy } from 'lodash';
 
 import Main from './components/Main';
 import Profile from './components/Profile';
@@ -17,6 +17,8 @@ export default class App extends React.Component {
         doctors: [],
         rooms: [],
         profile: {},
+        orderBy: 'ask',
+        currentSortField: '',
       };
     componentDidMount() {
         this.getData();
@@ -43,11 +45,26 @@ export default class App extends React.Component {
 
     getSpecialists = () => {
         const { doctors, rooms } = this.state;
-        const apps = doctors.map((doc) => {
+        const specialists = doctors.map((doc) => {
             const { roomNumber } = find(rooms, { roomId: doc.roomId });
             return { ...doc, roomNumber };
         });
-        return apps;
+        return specialists;
+    }
+
+    handleChangeField = ({ target }) => {
+        const { doctors, orderBy, currentSortField } = this.state;
+        const { value } =  target;
+        const sortFunctions = {
+            ask: sortBy(doctors, value),
+            desk: sortBy(doctors, value).reverse(),
+        };
+        let newOrderBy = orderBy;
+        if (currentSortField === value) {
+            newOrderBy = orderBy === 'ask' ? 'desk' : 'ask';
+        }
+        const sortedDoctors = sortFunctions[orderBy];
+        this.setState({ doctors: sortedDoctors, orderBy: newOrderBy, currentSortField: value });
     }
 
     render() {
@@ -59,7 +76,7 @@ export default class App extends React.Component {
                         <Route exact path="/" render={() => <Main apps={this.getAppointments()} />} />
                         <Route path="/profile" render={() => <Profile profile={this.state.profile} />} />
                         <Route path="/appointments" render={() => <Appointments apps={this.getAppointments()} />} />
-                        <Route path="/specialists" render={() => <Specialists specialists={this.getSpecialists()} />} />
+                        <Route path="/specialists" render={() => <Specialists onChangeField={this.handleChangeField} specialists={this.getSpecialists()} />} />
                         <Route path="/plan" component={Plan}/>
                     </Content>
                 </div>

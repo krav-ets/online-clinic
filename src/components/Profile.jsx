@@ -15,8 +15,8 @@ export default class Profile extends React.Component {
                         <div className="col-8">
                             <div className="card-body">
                                 <h5 className="card-title">{fullName}</h5>
-                                <p className="card-text mt-3">Телефон: {phoneNumber}</p>
-                                <p className="card-text">Email: {email}</p>
+                                <p className="card-text mt-3"><strong>Телефон:</strong> {phoneNumber}</p>
+                                <p className="card-text"><strong>Email:</strong> {email}</p>
                             </div>
                         </div>
                     </div>
@@ -27,7 +27,7 @@ export default class Profile extends React.Component {
                     <Link to="/plan" className="list-group-item list-group-item-action">Схема поликлиники</Link>
                 </div>
                 <div className="row justify-content-center">
-                    <div className="col-6">
+                    <div className="col-6 mt-1">
                         <button type="button" className="btn btn-block btn-outline-success btn-sm">Выйти</button>
                     </div>
                 </div>
